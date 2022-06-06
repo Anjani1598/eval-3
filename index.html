@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+       #navbar{
+        display: flex;
+        justify-content: space-between;
+        background-color: aqua;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>Sign Up</h3> 
+      <a href="voucher.html">Purchase Voucher</a>
+    </div>
+    <div id="form">
+        <h1>SignUp</h1>
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Email" id="email">
+        <input type="text" placeholder="Address" id="address">
+        <input type="number" placeholder="Add amount to wallet" id="amount">
+        <button id="submit">Submit</button>
+    </div>
+    <!-- - name input box :- "name"
+  - email input box :- "email"
+  - Address input box :- "address"
+  - Amount input box :- "amount" 
+  - Submit button :- "submit"
+  - The user will be stored with key:- "user"
+  - The input fields should become empty after submitting -->
+  </body>
+</html>
+<script>
+  let btn = document.getElementById("submit")
+  btn.addEventListener("click",submit)
+
+  function UserObj(n,e,a,amt){
+    this.name = n;
+    this.emial = e;
+    this.address = a;
+    this.wallet = amt;
+  }
+
+  function submit(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let address = document.getElementById("address").value;
+    let amt = document.getElementById("amount").value;
+    let u = new UserObj(name,email,address,amt)
+    localStorage.setItem("user",JSON.stringify(u))
+    document.getElementById("name").value= "";
+    document.getElementById("email").value= "";
+    document.getElementById("address").value= "";
+    document.getElementById("amount").value= "";
+    alert("SignUp Successful")
+    window.location.href = "voucher.html"
+  }
+</script>
