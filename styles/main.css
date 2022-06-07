@@ -1,0 +1,10 @@
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    
+  }

@@ -1,0 +1,24 @@
+#purchased_vouchers{
+    padding: 20px;
+    width: 100%;
+    display: grid;
+    height: auto;
+    grid-template-columns: repeat(4,1fr);
+    row-gap: 20px;
+    column-gap: 5px;
+  }
+  #purchased_vouchers>div{
+    text-align: center;
+    border: 1px solid gray;
+
+  }
+  #navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    
+  }
